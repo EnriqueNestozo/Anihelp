@@ -37,7 +37,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/anihelpLogo2" />
+        app:srcCompat="@drawable/anihelplogo2" />
 
     <EditText
         android:id="@+id/editText"

@@ -1,4 +1,4 @@
-package com.nestozo.enriq.anihelp.POJO;
+package com.nestozo.enriq.anihelp.common.pojo;
 
 public class Cat extends Animal{
     private String raza="";

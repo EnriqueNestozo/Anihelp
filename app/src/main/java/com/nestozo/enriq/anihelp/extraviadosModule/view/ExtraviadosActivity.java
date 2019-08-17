@@ -1,4 +1,4 @@
-package com.nestozo.enriq.anihelp.Extraviados;
+package com.nestozo.enriq.anihelp.extraviadosModule.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
@@ -7,7 +7,6 @@ import androidx.fragment.app.FragmentTransaction;
 import android.net.Uri;
 import android.os.Bundle;
 
-import com.nestozo.enriq.anihelp.ExtraviadosFragment;
 import com.nestozo.enriq.anihelp.R;
 
 public class ExtraviadosActivity extends AppCompatActivity implements ExtraviadosFragment.OnFragmentInteractionListener{

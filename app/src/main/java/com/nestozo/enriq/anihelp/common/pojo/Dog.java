@@ -1,4 +1,4 @@
-package com.nestozo.enriq.anihelp.POJO;
+package com.nestozo.enriq.anihelp.common.pojo;
 
 public class Dog extends Animal {
     public static final String RAZA = "raza";

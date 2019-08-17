@@ -1,4 +1,4 @@
-package com.nestozo.enriq.anihelp.POJO;
+package com.nestozo.enriq.anihelp.common.pojo;
 
 import com.google.firebase.database.Exclude;
 
@@ -8,6 +8,7 @@ public abstract class Animal {
     public static final String COLOR = "color";
     public static final String CHARACTERISTICS = "characteristics";
     public static final String STATE = "state";
+    public static final String LASTLOCATION = "lastLocation";
 
     @Exclude
     private String id="";
@@ -15,6 +16,7 @@ public abstract class Animal {
     private String color="";
     private String characterists="";
     private boolean state = false;
+    private String lastLocation = "";
 
 
     public Animal() {
@@ -68,5 +70,13 @@ public abstract class Animal {
 
     public void setState(boolean state){
         this.state = state;
+    }
+
+    public String getLastLocation() {
+        return lastLocation;
+    }
+
+    public void setLastLocation(String lastLocation) {
+        this.lastLocation = lastLocation;
     }
 }
