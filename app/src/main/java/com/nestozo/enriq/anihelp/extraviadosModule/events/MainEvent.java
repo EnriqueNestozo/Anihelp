@@ -11,7 +11,7 @@ public class MainEvent {
 
     private Animal animal;
     private int typeEvent;
-    private int resMessage;
+    private String resMessage;
 
     public MainEvent() {
     }
@@ -32,11 +32,11 @@ public class MainEvent {
         this.typeEvent = typeEvent;
     }
 
-    public int getResMessage() {
+    public String getResMessage() {
         return resMessage;
     }
 
-    public void setResMessage(int resMessage) {
+    public void setResMessage(String resMessage) {
         this.resMessage = resMessage;
     }
 }
