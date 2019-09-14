@@ -1,4 +1,4 @@
-package com.nestozo.enriq.anihelp.common.model;
+package com.nestozo.enriq.anihelp.common.dataAccess;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;

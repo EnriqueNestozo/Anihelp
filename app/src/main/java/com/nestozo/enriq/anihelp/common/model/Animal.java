@@ -1,4 +1,4 @@
-package com.nestozo.enriq.anihelp.common.pojo;
+package com.nestozo.enriq.anihelp.common.model;
 
 import com.google.firebase.database.Exclude;
 

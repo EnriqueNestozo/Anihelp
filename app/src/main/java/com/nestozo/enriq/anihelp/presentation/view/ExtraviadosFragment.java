@@ -1,16 +1,26 @@
-package com.nestozo.enriq.anihelp.extraviadosModule.view;
+package com.nestozo.enriq.anihelp.presentation.view.ui;
 
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.nestozo.enriq.anihelp.R;
+import com.nestozo.enriq.anihelp.common.model.Animal;
+import com.nestozo.enriq.anihelp.ExtraviadosContract;
+import com.nestozo.enriq.anihelp.presentation.view.adapters.ExtraviadosAdapter;
+import com.nestozo.enriq.anihelp.presentation.view.adapters.OnItemClickListener;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 
 /**
@@ -21,13 +31,26 @@ import com.nestozo.enriq.anihelp.R;
  * Use the {@link ExtraviadosFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ExtraviadosFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
+public class ExtraviadosFragment extends Fragment implements OnItemClickListener, ExtraviadosContract.View {
+
+    @BindView(R.id.addButton)
+    FloatingActionButton addButton;
+
+    @BindView(R.id.recyclerView)
+    RecyclerView recyclerView;
+
+    @BindView(R.id.progressBar)
+    ProgressBar progressBar;
+
+    private ExtraviadosContract.Presenter presenter;
+    private ExtraviadosAdapter adapter;
+
+
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
+
     private String mParam1;
     private String mParam2;
 
@@ -68,7 +91,9 @@ public class ExtraviadosFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_extraviados, container, false);
+        View view = inflater.inflate(R.layout.fragment_extraviados, container, false);
+        ButterKnife.bind(this, view);
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -93,6 +118,41 @@ public class ExtraviadosFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onItemClick(Animal animal) {
+
+    }
+
+    @Override
+    public void showProgress() {
+
+    }
+
+    @Override
+    public void hideProgress() {
+
+    }
+
+    @Override
+    public void add(Animal animal) {
+
+    }
+
+    @Override
+    public void update(Animal animal) {
+
+    }
+
+    @Override
+    public void remove(Animal animal) {
+
+    }
+
+    @Override
+    public void onShowError(String message) {
+
     }
 
     /**

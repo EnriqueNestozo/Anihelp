@@ -1,7 +1,6 @@
-package com.nestozo.enriq.anihelp.extraviadosModule;
+package com.nestozo.enriq.anihelp;
 
-import com.nestozo.enriq.anihelp.common.pojo.Animal;
-import com.nestozo.enriq.anihelp.extraviadosModule.events.MainEvent;
+import com.nestozo.enriq.anihelp.common.model.Animal;
 
 public interface ExtraviadosContract {
     interface View{
@@ -19,7 +18,6 @@ public interface ExtraviadosContract {
         void onResume();
         void onDestroy();
         void removeAnimal(Animal animal);
-        void onEventListener(MainEvent mainEvent);
     }
 
     interface Interactor{

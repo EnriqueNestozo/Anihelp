@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".extraviadosModule.view.ExtraviadosActivity"
+    tools:context=".presentation.view.ui.ExtraviadosActivity"
     android:id="@+id/activity_extraviados">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

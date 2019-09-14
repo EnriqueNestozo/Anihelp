@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_extraviados"
+        android:icon="@drawable/pawprint"
+        android:title="Extraviados"/>
+    <item
+        android:id="@+id/nav_adopcion"
+        android:icon="@drawable/adoption"
+        android:title="Adopcion"/>
+    <item
+        android:id="@+id/nav_perfil"
+        android:icon="@drawable/person_black_24dp"
+        android:title="Perfil"/>
+</menu>
