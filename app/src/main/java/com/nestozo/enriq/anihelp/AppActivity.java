@@ -10,7 +10,7 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.nestozo.enriq.anihelp.presentation.view.AdoptionFragment;
-import com.nestozo.enriq.anihelp.presentation.view.ui.ExtraviadosFragment;
+import com.nestozo.enriq.anihelp.presentation.view.ExtraviadosFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

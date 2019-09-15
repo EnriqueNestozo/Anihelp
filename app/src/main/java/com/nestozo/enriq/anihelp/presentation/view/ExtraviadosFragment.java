@@ -1,12 +1,15 @@
-package com.nestozo.enriq.anihelp.presentation.view.ui;
+package com.nestozo.enriq.anihelp.presentation.view;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,8 +19,11 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.nestozo.enriq.anihelp.R;
 import com.nestozo.enriq.anihelp.common.model.Animal;
 import com.nestozo.enriq.anihelp.ExtraviadosContract;
-import com.nestozo.enriq.anihelp.presentation.view.adapters.ExtraviadosAdapter;
-import com.nestozo.enriq.anihelp.presentation.view.adapters.OnItemClickListener;
+import com.nestozo.enriq.anihelp.presentation.adapters.ExtraviadosAdapter;
+import com.nestozo.enriq.anihelp.presentation.adapters.OnItemClickListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -31,7 +37,7 @@ import butterknife.ButterKnife;
  * Use the {@link ExtraviadosFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ExtraviadosFragment extends Fragment implements OnItemClickListener, ExtraviadosContract.View {
+public class ExtraviadosFragment extends Fragment implements OnItemClickListener{
 
     @BindView(R.id.addButton)
     FloatingActionButton addButton;
@@ -42,8 +48,8 @@ public class ExtraviadosFragment extends Fragment implements OnItemClickListener
     @BindView(R.id.progressBar)
     ProgressBar progressBar;
 
-    private ExtraviadosContract.Presenter presenter;
     private ExtraviadosAdapter adapter;
+    private List<Animal> animals;
 
 
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -93,6 +99,7 @@ public class ExtraviadosFragment extends Fragment implements OnItemClickListener
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_extraviados, container, false);
         ButterKnife.bind(this, view);
+        initRecyclerView();
         return view;
     }
 
@@ -120,51 +127,21 @@ public class ExtraviadosFragment extends Fragment implements OnItemClickListener
         mListener = null;
     }
 
-    @Override
-    public void onItemClick(Animal animal) {
-
+    public void initRecyclerView(){
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        recyclerView.setLayoutManager(linearLayoutManager);
+        animals = new ArrayList<>();
+        adapter = new ExtraviadosAdapter(animals, this);
+        recyclerView.setAdapter(adapter);
     }
 
     @Override
-    public void showProgress() {
-
+    public void onItemClick(int animalPosition) {
+        //Intent intent = new Intent(this,someClass.class);
+        //intent.putExtra("Animal",animals.get(animalPosition));
+        //startActivity(intent);
+        Log.d("Click", animals.get(animalPosition).getName());
     }
-
-    @Override
-    public void hideProgress() {
-
-    }
-
-    @Override
-    public void add(Animal animal) {
-
-    }
-
-    @Override
-    public void update(Animal animal) {
-
-    }
-
-    @Override
-    public void remove(Animal animal) {
-
-    }
-
-    @Override
-    public void onShowError(String message) {
-
-    }
-
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
